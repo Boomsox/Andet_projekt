@@ -45,7 +45,7 @@ def turtlePlot(turtleCommands):
     Længde = turtleCommands[range(0, np.size(turtleCommands), 2)]
     
     for n in range(1, int(np.size(turtleCommands) / 2) + 1):
-        # Næste retningsvektor
+        # Næste 'retningsvektor'
         d[:, n] = np.dot(np.array([[math.cos(Vinkler[n-1]), -math.sin(Vinkler[n-1])], [math.sin(Vinkler[n-1]), math.cos(Vinkler[n-1])]]), d[:, n - 1])
         
         
@@ -56,12 +56,13 @@ def turtlePlot(turtleCommands):
 #De forskellige plots med labels
     plt.plot(x[0, :], x[1, :])
     
-    #Plot title
+    ##  Plot title
+        # Koch Curve
     if turtleCommands[2] == 1/3:
-        plt.title("Koch curve, iteration 1")
+        plt.title("Koch Curve, Iteration 1")
     
     elif turtleCommands[2] == 1/3**2:
-        plt.title("Koch curve, iteration 2")
+        plt.title("Koch Curve, Iteration 2")
         
     elif turtleCommands[2] == 1/3**3:
         plt.title("Koch curve, iteration 3")
@@ -69,28 +70,48 @@ def turtlePlot(turtleCommands):
     elif turtleCommands[2] == 1/3**4:
         plt.title("Koch curve, iteration 4")
         
-    elif System == "Sierpinski":
-        if N == 1:
-            plt.title("Sierpinski curve, iteration 1")
-        elif N == 2:
-            plt.title("Sierpinski curve, iteration 2")
-        elif N == 3:
-            plt.title("Sierpinski curve, iteration 3")
-        elif N == 4:
-            plt.title("Sierpinski curve, iteration 4")
-        elif N == 5:
-            plt.title("Sierpinski curve, iteration 5")
-        elif N == 6:
-            plt.title("Sierpinski curve, iteration 6")
-        elif N == 7:
-            plt.title("Sierpinski curve, iteration 7")
-        elif N == 8:
-            plt.title("Sierpinski curve, iteration 8")
+    elif turtleCommands[2] == 1/3**5:
+        plt.title("Koch curve, iteration 5")
+        
+    elif turtleCommands[2] == 1/3**6:
+        plt.title("Koch curve, iteration 6")
+        
+    elif turtleCommands[2] == 1/3**7:
+        plt.title("Koch curve, iteration 7")
+        
+    elif turtleCommands[2] == 1/3**8:
+        plt.title("Koch curve, iteration 8")
+        
+        
+        # Sierpinski Curve
+    elif turtleCommands[2] == 1/2**1:
+        plt.title("Sierpinski curve, iteration 1")
+        
+    elif turtleCommands[2] == 1/2**2:
+        plt.title("Sierpinski curve, iteration 2")
+        
+    elif turtleCommands[2] == 1/2**3:
+        plt.title("Sierpinski curve, iteration 3")
+    
+    elif turtleCommands[2] == 1/2**4:    
+        plt.title("Sierpinski curve, iteration 4")
+      
+    elif turtleCommands[2] == 1/2**5:
+        plt.title("Sierpinski curve, iteration 5")
+        
+    elif turtleCommands[2] == 1/2**6:
+        plt.title("Sierpinski curve, iteration 6")
+        
+    elif turtleCommands[2] == 1/2**7:
+        plt.title("Sierpinski curve, iteration 7")
+        
+    elif turtleCommands[2] == 1/2**8:
+        plt.title("Sierpinski curve, iteration 8")
     
     
     #Akselabels
-    plt.xlabel('Nice')
-    plt.ylabel('Ice')
+    #plt.xlabel('Nice')
+    #plt.ylabel('Ice')
     
     
     #Limits på plottet
@@ -99,4 +120,4 @@ def turtlePlot(turtleCommands):
     
     #Viser grafen. 
     plt.show()
-print(turtlePlot(turtleGraph(LindIter("Koch", 2))))
+    
