@@ -78,3 +78,41 @@ def userInputNumber(showstring,limit):
                 print("Not a valid number. Please try again.")
     
     return choice
+
+def userInputString(showstring,limit):
+    while True:
+        
+        condition = True;
+        
+        try:
+            
+            choice = str(input("{:s}: ".format(showstring.capitalize())));
+            choice = choice.upper();
+
+            for i in range(len(choice)):
+                
+                if np.any(limit == choice[i]):
+                    
+                    condition = False;
+                    letter_used = choice[i];
+                    
+            
+            if condition == True:
+                
+                if choice.isalpha():
+                    break;
+                
+                else:
+                    print();
+                    print('The input can only contain letters. Please try again');
+                    
+                    
+            else:
+                print();
+                print("The letter '{:s}' is already used. Please input another.".format(letter_used));
+                print();
+                        
+        except:
+            print();
+            print("Not a valid string. Please try again.")
+    return choice

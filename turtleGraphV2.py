@@ -50,7 +50,6 @@ def turtleGraph(lms):
     for i in range(np.size(it_change)):
         y += lms.count(it_change[i]);
     
-    #return y,factor
     try:
         iteration = int(( math.log( factor * y )) / ( math.log(factor) )) ;
     
