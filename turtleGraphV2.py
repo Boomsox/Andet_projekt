@@ -17,6 +17,7 @@ def turtleGraph(lms):
     ##Globale variable
     codes = np.array(['S',(1/3),'A',0.5,'B',0.5]);
     it_change = np.array(['SLSRSLS','BRARB','ALBLA']);
+    LR_turn = np.array([(1/3)*math.pi,-(2/3)*math.pi,(1/3)*math.pi,-(1/3)*math.pi,(1/3)*math.pi,-(1/3)*math.pi]);
     
     
     ##Identificer streng
@@ -66,15 +67,15 @@ def turtleGraph(lms):
         
         if lms[i] == 'R':
             turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),length);
-            turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),((-2/3)*math.pi));
+            turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),LR_turn[1::2][int(ids[0])]);
         
         if lms[i] == 'L':
             turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),length);
-            turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),((1/3)*math.pi));
+            turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),LR_turn[::2][int(ids[0])]);
         
         if np.any(lms[i] == rev_letters) and (lms[i-1] != 'R') and (lms[i-1] != 'L'):
             turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),length);
             turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),0);
     
     return turtleCommands
-print(turtleGraph('SLSRSLSLSLSRSLSRSLSRSLSLSLSRSLS'))
+#print(turtleGraph('ALBLARBRARBRALBLALBRARBLALBLALBRARBLALBLARBRARBRALBLARBRARBLALBLALBRARBRALBLARBRARBRALBLARBRARBLALBLALBRARBRALBLARBRARBRALBLALBRARBLALBLALBRARBLALBLARBRARBRALBLA'))
