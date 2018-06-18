@@ -43,6 +43,7 @@ def userInputMenu(options,showstring):
         # Ex: Hvis man kun vil have et max på 60.
         # limit = np.array([False,60]);
 def userInputNumber(showstring,limit):
+    
     while True:
             
             try:
@@ -79,28 +80,49 @@ def userInputNumber(showstring,limit):
     
     return choice
 
-def userInputString(showstring,limit):
+
+# userInputString printer en forespørgsel om et strenginput fra brugeren
+    
+# input:
+    # showstring er den forespørgsel, der vises til brugeren.
+    # limit er et NumPy array med de strenge, der ikke må inputtes.
+        # Hvis der ikke er nogen begrænsninger inputtes limit = np.array([0])
+    # char_limit er antallet af karakterer der maksimalt må inputtes.
+def userInputString(showstring,limit,char_limit):
+    
+    for i in range(np.size(limit)):
+        limit[i] = limit[i].upper();
+        
     while True:
         
         condition = True;
         
         try:
             
-            choice = str(input("{:s}: ".format(showstring.capitalize())));
+            choice = str(input("{:s}: ".format(showstring)));
             choice = choice.upper();
-
-            for i in range(len(choice)):
+            
+            if limit[0] == False:
+                condition = True;
                 
-                if np.any(limit == choice[i]):
+            else:
+                for i in range(len(choice)):
                     
-                    condition = False;
-                    letter_used = choice[i];
+                    if np.any(limit == choice):
+                        
+                        condition = False;
                     
             
             if condition == True:
                 
                 if choice.isalpha():
-                    break;
+                    
+                    if (len(choice) <= char_limit):
+                        break;
+                    
+                    else:
+                        print();
+                        print('Please input only {:.0f} character(s).'.format(char_limit));
                 
                 else:
                     print();
@@ -109,10 +131,11 @@ def userInputString(showstring,limit):
                     
             else:
                 print();
-                print("The letter '{:s}' is already used. Please input another.".format(letter_used));
+                print("The string '{:s}' is already used. Please input another.".format(choice));
                 print();
                         
         except:
             print();
             print("Not a valid string. Please try again.")
+        
     return choice
