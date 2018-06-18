@@ -5,10 +5,10 @@ Created on Mon Jun 18 13:42:36 2018
 @author: Anders, s174008
 """
 
-from Underfunktioner import Koch
-from Underfunktioner import Sierpinski
-from Underfunktioner import stringOperationK
-from Underfunktioner import stringOperationS
+from LindIter_sub import Koch
+from LindIter_sub import Sierpinski
+from LindIter_sub import stringOperationK
+from LindIter_sub import stringOperationS
 
 def LindIter(System, N):
     

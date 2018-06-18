@@ -85,10 +85,12 @@ def userInputNumber(showstring,limit):
     
 # input:
     # showstring er den forespørgsel, der vises til brugeren.
-    # limit er et NumPy array med de strenge, der ikke må inputtes.
+    # string_limit er et NumPy array med de strenge, der ikke må inputtes.
         # Hvis der ikke er nogen begrænsninger inputtes limit = np.array([0])
     # char_limit er antallet af karakterer der maksimalt må inputtes.
-def userInputString(showstring,limit,char_limit):
+def userInputString(showstring,string_limit,char_limit):
+    
+    limit = np.copy(string_limit);
     
     for i in range(np.size(limit)):
         limit[i] = limit[i].upper();

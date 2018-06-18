@@ -16,16 +16,22 @@ import os;
 #import functions
 from userInput import userInputMenu;
 from userInput import userInputNumber;
+from userInput import userInputString;
 
 from turtleGraphV2 import turtleGraph;
 
-from Lindter import LindIter;
+from LindIter import LindIter;
 
 from Plots import turtlePlot;
 
+from addCode import addCode;
+
 
 #global variables
-
+codes = np.array(['S',(1/3),'A',0.5,'B',0.5]);
+it_change = np.array(['SLSRSLS','BRARB','ALBLA']);
+LR_turn = np.array([(1/3)*math.pi,-(2/3)*math.pi,(1/3)*math.pi,-(1/3)*math.pi,(1/3)*math.pi,-(1/3)*math.pi]);
+names = np.array(['Koch Curve','Sierpinski Curve']);
 
 while True:
     
@@ -42,7 +48,7 @@ while True:
         
         # Vælge system
         while True:
-            system_choice = userInputMenu(np.array(['Koch Curve','Sierpinski Curve','Go back']),'Please select an option');
+            system_choice = userInputMenu(np.insert(names,np.size(names),('Custom','Go back')),'Please select an option');
             
             
             ##  Koch Curve
@@ -65,15 +71,28 @@ while True:
                 
                 break;
                 
+            
+            ## Add code  
+            if system_choice == np.size(np.insert(names,np.size(names),('Custom','Go back'))) - 1:
+                print();
+                (a,b,c,d,e,f) = addCode(codes,it_change,names)
+                codes = np.insert(codes,np.size(codes),(a,c));
+                it_change = np.insert(it_change,np.size(it_change),b);
+                LR_turn = np.insert(LR_turn,np.size(LR_turn),(d,e));
+                names = np.insert(names,np.size(names),f);
+                
+                break;
+                
                 
             ## Go back   
-            if system_choice == 3:
+            if system_choice == np.size(np.insert(names,np.size(names),('Custom','Go back'))):
                 print();
                 print('Returning to main menu.');
                 
                 break;
     
-    
+            if (np.size(names) >= 3):
+                if system_choice == np.size(np.insert(names,np.size(names),('Custom','Go back'))) - 2:
     
     ####    Info on systems   ####
     if (choice == 2):

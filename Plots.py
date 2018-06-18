@@ -10,7 +10,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 from turtleGraphV2 import turtleGraph
-from Lindter import LindIter
+from LindIter import LindIter
 
 # Koch kurve:
 kv = np.array([1/3**2, 1/3*math.pi])
