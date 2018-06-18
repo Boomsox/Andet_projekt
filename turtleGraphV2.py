@@ -15,7 +15,7 @@ def turtleGraph(lms):
     factor = 0;
     
     ##Globale variable
-    codes = np.array(['S',0.5,'A',(1/3),'B',(1/3)]);
+    codes = np.array(['S',(1/3),'A',0.5,'B',0.5]);
     it_change = np.array(['SLSRSLS','BRARB','ALBLA']);
     
     
@@ -72,8 +72,9 @@ def turtleGraph(lms):
             turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),length);
             turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),((1/3)*math.pi));
         
-        else:
+        if np.any(lms[i] == rev_letters) and (lms[i-1] != 'R') and (lms[i-1] != 'L'):
             turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),length);
             turtleCommands = np.insert(turtleCommands,np.size(turtleCommands),0);
     
     return turtleCommands
+print(turtleGraph('SLSRSLSLSLSRSLSRSLSRSLSLSLSRSLS'))
