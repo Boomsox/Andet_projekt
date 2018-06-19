@@ -52,61 +52,66 @@ def turtlePlot(turtleCommands):
         # Næste punkt på grafen
         x[:, n] = x[:, n - 1] + (Længde[n-1] * d[:, n])    
 
-       
+    
+    from MainScript import System;
+    
 #De forskellige plots med labels
     plt.plot(x[0, :], x[1, :])
     
     ##  Plot title
-        # Koch Curve
-    if turtleCommands[2] == 1/3:
-        plt.title("Koch Curve, Iteration 1")
+    plt.title("{:s} Curve, Iteration".format(System))
     
-    elif turtleCommands[2] == 1/3**2:
-        plt.title("Koch Curve, Iteration 2")
+    
+        # Koch Curve
+    #if turtleCommands[2] == 1/3:
+        #plt.title("Koch Curve, Iteration 1")
+    
+    #if turtleCommands[2] == 1/3**2:
+    #    plt.title("Koch Curve, Iteration 2")
         
-    elif turtleCommands[2] == 1/3**3:
-        plt.title("Koch curve, iteration 3")
+    #elif turtleCommands[2] == 1/3**3:
+    #    plt.title("Koch curve, iteration 3")
         
-    elif turtleCommands[2] == 1/3**4:
-        plt.title("Koch curve, iteration 4")
+    #elif turtleCommands[2] == 1/3**4:
+    #    plt.title("Koch curve, iteration 4")
         
-    elif turtleCommands[2] == 1/3**5:
-        plt.title("Koch curve, iteration 5")
+    #elif turtleCommands[2] == 1/3**5:
+    #    plt.title("Koch curve, iteration 5")
         
-    elif turtleCommands[2] == 1/3**6:
-        plt.title("Koch curve, iteration 6")
+    #elif turtleCommands[2] == 1/3**6:
+    #    plt.title("Koch curve, iteration 6")
         
-    elif turtleCommands[2] == 1/3**7:
-        plt.title("Koch curve, iteration 7")
+    #elif turtleCommands[2] == 1/3**7:
+    #    plt.title("Koch curve, iteration 7")
         
-    elif turtleCommands[2] == 1/3**8:
-        plt.title("Koch curve, iteration 8")
+    #elif turtleCommands[2] == 1/3**8:
+    #    plt.title("Koch curve, iteration 8")
         
         
         # Sierpinski Curve
-    elif turtleCommands[2] == 1/2**1:
-        plt.title("Sierpinski curve, iteration 1")
+    #elif turtleCommands[2] == 1/2**1:
+    #    plt.title("Sierpinski curve, iteration 1")
         
-    elif turtleCommands[2] == 1/2**2:
-        plt.title("Sierpinski curve, iteration 2")
+    #elif turtleCommands[2] == 1/2**2:
+    #    plt.title("Sierpinski curve, iteration 2")
         
-    elif turtleCommands[2] == 1/2**3:
-        plt.title("Sierpinski curve, iteration 3")
+    #elif turtleCommands[2] == 1/2**3:
+    #    plt.title("Sierpinski curve, iteration 3")
     
-    elif turtleCommands[2] == 1/2**4:    
-        plt.title("Sierpinski curve, iteration 4")
+    #elif turtleCommands[2] == 1/2**4:    
+    #    plt.title("Sierpinski curve, iteration 4")
       
-    elif turtleCommands[2] == 1/2**5:
-        plt.title("Sierpinski curve, iteration 5")
+    #elif turtleCommands[2] == 1/2**5:
+    #    plt.title("Sierpinski curve, iteration 5")
         
-    elif turtleCommands[2] == 1/2**6:
-        plt.title("Sierpinski curve, iteration 6")
+    #elif turtleCommands[2] == 1/2**6:
+    #    plt.title("Sierpinski curve, iteration 6")
         
-    elif turtleCommands[2] == 1/2**7:
-        plt.title("Sierpinski curve, iteration 7")
+    #elif turtleCommands[2] == 1/2**7:
+    #    plt.title("Sierpinski curve, iteration 7")
         
-    elif turtleCommands[2] == 1/2**8:
-        plt.title("Sierpinski curve, iteration 8")
+    #elif turtleCommands[2] == 1/2**8:
+    #    plt.title("Sierpinski curve, iteration 8")
     
     
     #Akselabels

@@ -126,14 +126,20 @@ while True:
             Iter_choice = userInputMenu(np.array(['1', '2', '3', '4', '5', '6', '7', '8']),'Please choose a number between 1 and 8');
             
             N = int(Iter_choice)
-        
+            
             break;
         
         
         
     ####    Plots   ####
     if (choice == 3):
-        print(turtlePlot(turtleGraph(LindIter(System, N))))
+        ttc = (LindIter(System, N))
+        print(ttc);
+        ttc = turtleGraph(ttc);
+        print(ttc)
+        #ttc = turtlePlot(ttc)
+        #print(ttc)
+        break;
         
         
         
