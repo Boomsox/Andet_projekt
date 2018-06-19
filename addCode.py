@@ -35,7 +35,7 @@ def addCode(codes,it_change,names):
             print('String contains symbols that are not valid. Please try again.')
             wrong_string = False;
             
-        u_string = userInputString("Please input a unique sequence, using only 'L', 'R' and '{:s}'".format(u_letter),it_change,8);
+        u_string = userInputString("Please input a unique sequence, using only 'L', 'R' and '{:s}'".format(u_letter),it_change,20);
     
         for i in range(len(u_string)):
             if (u_string[i] != 'L') and (u_string[i] != 'R') and (u_string[i] != u_letter):
