@@ -50,8 +50,8 @@ def addCode(codes,it_change,names):
     
     print();
     print("Each 'R' and 'L' turns the direction in a certain angle. Please note that the next input will be used as a multiple of pi.");
-    L_turn = userInputNumber('Please input a positive integer as the angle of the left turn',np.array([1e-2,1-(1e-2)]));
-    R_turn = -userInputNumber('Please input a positive integer as the angle of the right turn',np.array([1e-2,1-(1e-2)]));
+    L_turn = math.pi * userInputNumber('Please input a positive integer as the angle of the left turn',np.array([1e-2,1-(1e-2)]));
+    R_turn = -math.pi * userInputNumber('Please input a positive integer as the angle of the right turn',np.array([1e-2,1-(1e-2)]));
     
     print();
     name = userInputString("Please input a unique name",names,20);
