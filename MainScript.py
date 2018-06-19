@@ -38,7 +38,7 @@ while True:
     print();
     
     ## Hovedmenu
-    choice = userInputMenu(np.array(['Choose Lindenmeyer system', 'See information for the systems', 'Set number of interations', 'Create plots', 'Quit']),'Please select an option');
+    choice = userInputMenu(np.array(['Choose Lindenmeyer system', 'Set number of interations', 'Create plots', 'See information for the systems', 'Quit']),'Please select an option');
     
     
     ####   Lindenmeyer system and iterations  ####
@@ -99,6 +99,26 @@ while True:
         
         print();
         
+        while True:
+        
+            Iter_choice = userInputMenu(np.array(['1', '2', '3', '4', '5', '6', '7', '8']),'Please input the number of iterations');
+            
+            N = int(Iter_choice)
+        
+            break;
+        
+    ####    Plots   ####
+    if (choice == 3):
+        print(turtlePlot(turtleGraph(LindIter(System, N))))
+        
+        
+        
+        
+    ####    Info on systems   ####
+    if (choice == 4):
+        
+        print();
+        
         # Vælge systeminfo
         while True:
             system_choice = userInputMenu(np.array(['Lindenmeyer systems', 'Koch Curve','Sierpinski Curve','Go back']),'Please select an option');
@@ -107,7 +127,7 @@ while True:
              ##  Lindenmeyer system info
             if system_choice == 1:
                 
-                print('A Lindenmeyer System is a system originally created to describe the behaviour of plant cells and to model the growth processes of plant development. A Lindemeyer system is created of a string');
+                print('A Lindenmeyer System is a system originally created to describe the behaviour of plant cells and to model the growth processes of plant development. A Lindemeyer system is created of a string of letters which will be converted to');
                 
             
             
@@ -131,24 +151,6 @@ while True:
                 print('Returning to main menu.');
                 
                 break;
-        
-    
-    ####    Iterations   ####
-    if (choice == 3):
-        
-        print();
-        
-        while True:
-        
-            Iter_choice = userInputMenu(np.array(['1', '2', '3', '4', '5', '6', '7', '8']),'Please input the number of iterations');
-            
-            N = int(Iter_choice)
-        
-            break;
-        
-    ####    Plots   ####
-    if (choice == 4):
-        print(turtlePlot(turtleGraph(LindIter(System, N))))
         
         
         
