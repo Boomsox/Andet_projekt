@@ -2,11 +2,14 @@
 """
 Created on Mon Jun 18 11:54:11 2018
 
-@author: loved
+@author: Ditlev
 """
 import math;
 import numpy as np;
 
+
+#turtleGraph laver en streng om efter en række regler.
+    #lms er den streng der fremkommer af LindIter-funktionen.
 def turtleGraph(lms):
 
     Var = np.load("Variables.npz")

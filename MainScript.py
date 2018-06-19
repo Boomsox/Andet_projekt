@@ -4,7 +4,7 @@
 """
 Created on Mon Jun 18 15:10:33 2018
 
-@author: Lasse Bruun
+@author: Anders, Ditlev, Lasse
 """
 
 #import packages

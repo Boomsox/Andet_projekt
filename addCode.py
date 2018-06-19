@@ -2,7 +2,7 @@
 """
 Created on Mon Jun 18 13:32:54 2018
 
-@author: loved
+@author: Ditlev
 """
 
 import math;
