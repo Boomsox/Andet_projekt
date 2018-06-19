@@ -25,7 +25,7 @@ def userInputMenu(options,showstring):
             print("Input must have one of the displayed id's. Please try again.")
         while True:
             try:
-                choice = float(input("{:s}: ".format(showstring.capitalize())));
+                choice = float(input("{:s}: ".format(showstring)));
                 break;
             except ValueError:
                 print('Input is not valid. Please try again.')

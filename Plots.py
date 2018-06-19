@@ -22,6 +22,7 @@ def turtlePlot(turtleCommands):
     d[:, 0] = [1,0]
     x[:, 0] = [0,0]
     
+    
     # Vinklerne og længderne sættes ind i hver deres vektor
     Vinkler = turtleCommands[range(1, np.size(turtleCommands), 2)]
     Længde = turtleCommands[range(0, np.size(turtleCommands), 2)]

@@ -29,7 +29,7 @@ from addCode import addCode;
 
 
 #global variables
-    #hvis programmet har kørt før, husk da indtastede data.
+    # Hvis programmet har kørt før, huskes de tidligere indtastede data.
 try:
     Var = np.load("Variables.npz");
     codes = Var["codes"];
@@ -50,7 +50,7 @@ while True:
     choice = userInputMenu(np.array(['Define Lindenmayer system', 'Create plots', 'See information for the systems', 'Quit']),'Please select an option');
     
     
-    ####   Lindenmayer system and iterations  ####
+    ####   Lindenmayer system  ####
     if (choice == 1):
         
         print();
@@ -67,7 +67,7 @@ while True:
                 System = str(names[0]);
                 
                 print();
-                print('You chose the Koch Curve. Please select number of iterations.');
+                print('You chose the Koch Curve.');
                 
                 break;
                 
@@ -77,7 +77,7 @@ while True:
                 System = names[1];
                 
                 print();
-                print('You chose the Sierpinski Curve. Please select number of iterations.');
+                print('You chose the Sierpinski Curve.');
                 
                 break;
                 
@@ -88,7 +88,7 @@ while True:
                     System = names[2];
                 
                     print();
-                    print("You chose the custom curve '{:s}'. Please select number of iterations.".format(names[2]));
+                    print("You chose the custom curve '{:s}'.".format(names[2]));
                     break;
             
             ## Add code  
@@ -96,7 +96,7 @@ while True:
                 print();
                 go_back = False;
                 if np.size(names) == 3:
-                    system_question = userInputMenu(np.array(['Yes','No']),'Do you want to change the predefined function {:s}?'.format(names[2]));
+                    system_question = userInputMenu(np.array(['Yes','No']),'Do you want to change the predefined function {:s}?'.format(names[2].capitalize()));
                     
                     if system_question == 2:
                         go_back = True;
@@ -113,8 +113,10 @@ while True:
                     it_change = np.insert(it_change,np.size(it_change),b);
                     LR_turn = np.insert(LR_turn,np.size(LR_turn),(d,e));
                     names = np.insert(names,np.size(names),f);
-                
+                    
+                    
                 System = names[2];
+                np.savez("Variables.npz", names = names, codes = codes, it_change = it_change, LR_turn = LR_turn)
                 
                 print();
                 print("You chose the custom curve '{:s}'. Please select number of iterations.".format(names[2]));
@@ -131,6 +133,7 @@ while True:
     
         print();
         
+    ## Kontrol om system er valgt    
     if (choice == 2) :
         try: 
             isinstance(System,str);
@@ -140,7 +143,7 @@ while True:
             choice = 0;
             
             
-        ####    Plots   ####
+        ####    Iterations and plots   ####
         if (choice == 2):
             
             print();
@@ -163,8 +166,11 @@ while True:
         # Vælge systeminfo
         while True:
             print();
-            option3 = np.insert(names,np.size(names),'Go back');
-            option3 = np.insert(option3,0,('Lindenmayer Systems'));
+            
+            # Sammensætter menuen med mulige valg
+            option1 = np.array(["Lindenmayer Systems"],dtype = 'U25')
+            option2 = np.append(option1,names);
+            option3 = np.insert(option2,np.size(option2),'Go back');
             system_choice = userInputMenu(option3,'Please select an option');
         
         
