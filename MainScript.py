@@ -38,7 +38,7 @@ while True:
     print();
     
     ## Hovedmenu
-    choice = userInputMenu(np.array(['Choose Lindenmeyer system', 'Set number of interations', 'Create plots', 'See information for the systems', 'Quit']),'Please select an option');
+    choice = userInputMenu(np.array(['Choose Lindenmeyer system', 'Create plots', 'See information for the systems', 'Quit']),'Please select an option');
     
     
     ####   Lindenmeyer system and iterations  ####
@@ -132,14 +132,14 @@ while True:
         
         
     ####    Plots   ####
-    if (choice == 3):
+    if (choice == 2):
         print(turtlePlot(turtleGraph(LindIter(System, N))))
         
         
         
         
     ####    Info on systems   ####
-    if (choice == 4):
+    if (choice == 3):
         
         print();
         
@@ -196,7 +196,7 @@ while True:
         
         
     ####    Quit program   ####
-    if (choice == 5):
+    if (choice == 4):
         print();
         print('Program shutting down.');
         break;
