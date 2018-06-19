@@ -13,9 +13,10 @@ def LindIter(System, N):
     
     
     #Henter de globale variable der bliver specificeret fra mainscriptet
-    from MainScript import names
-    from MainScript import codes
-    from MainScript import it_change
+    Var = np.load("Variables.npz")
+    names = Var["names"]
+    codes = Var["codes"]
+    it_change = Var["it_change"]
     
     
     #Fjerner længderne fra den globale variable codes, så kun de intialiserende bogstaver står tilbage

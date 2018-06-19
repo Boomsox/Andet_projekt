@@ -9,9 +9,10 @@ import numpy as np;
 
 def turtleGraph(lms):
 
-    from MainScript import N;
-    from MainScript import codes;
-    from MainScript import LR_turn;
+    Var = np.load("Variables.npz")
+    N = Var["N"]
+    codes = Var["codes"]
+    LR_turn = Var["LR_turn"]
 
     ## Variable til funktionen
     turtleCommands = np.array([]);

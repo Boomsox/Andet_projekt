@@ -9,8 +9,6 @@ Created on Sun Jun 17 11:32:12 2018
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-from turtleGraphV2 import turtleGraph
-from LindIter import LindIter
 
 # Koch kurve:
 kv = np.array([1/3**2, 1/3*math.pi])
@@ -53,13 +51,15 @@ def turtlePlot(turtleCommands):
         x[:, n] = x[:, n - 1] + (Længde[n-1] * d[:, n])    
 
     
-    from MainScript import System;
     
+    Var = np.load("Variables.npz")
+    System = Var["System"]
+    N = Var["N"]
 #De forskellige plots med labels
     plt.plot(x[0, :], x[1, :])
     
     ##  Plot title
-    plt.title("{:s} Curve, Iteration".format(System))
+    plt.title("{:s} Curve, Iteration {:.0f}".format(System, N))
     
     
         # Koch Curve
