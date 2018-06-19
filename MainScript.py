@@ -31,7 +31,7 @@ from addCode import addCode;
 codes = np.array(['S',(1/3),'A',0.5,'B',0.5]);
 it_change = np.array(['SLSRSLS','BRARB','ALBLA']);
 LR_turn = np.array([(1/3)*math.pi,-(2/3)*math.pi,(1/3)*math.pi,-(1/3)*math.pi,(1/3)*math.pi,-(1/3)*math.pi]);
-names = np.array(['Koch Curve','Sierpinski Curve']);
+names = np.array(['Koch','Sierpinski']);
 
 while True:
     
@@ -54,7 +54,7 @@ while True:
             ##  Koch Curve
             if system_choice == 1:
                 
-                System = "Koch"
+                System = names[0];
                 
                 print();
                 print('You chose the Koch Curve. Returning to main menu.');
@@ -64,23 +64,50 @@ while True:
             ## Sierpinski Curve  
             if system_choice == 2:
                 
-                System = "Sierpinski"
+                System = names[1];
                 
                 print();
                 print('You chose the Sierpinski Curve. Returning to main menu.');
                 
                 break;
                 
+            if np.size(names) == 3:
+                
+                if system_choice == 3:
+                    
+                    System = names[2];
+                
+                    print();
+                    print("You chose the custom curve '{:s}'. Returning to main menu.".format(names[2]));
+                    break;
             
             ## Add code  
             if system_choice == np.size(np.insert(names,np.size(names),('Custom','Go back'))) - 1:
                 print();
-                (a,b,c,d,e,f) = addCode(codes,it_change,names)
-                codes = np.insert(codes,np.size(codes),(a,c));
-                it_change = np.insert(it_change,np.size(it_change),b);
-                LR_turn = np.insert(LR_turn,np.size(LR_turn),(d,e));
-                names = np.insert(names,np.size(names),f);
+                go_back = False;
+                if np.size(names) == 3:
+                    system_question = userInputMenu(np.array(['Yes','No']),'Do you want to change the predefined function {:s}?'.format(names[2]));
+                    
+                    if system_question == 2:
+                        go_back = True;
                 
+                if go_back == False:
+                    codes = np.array(['S',(1/3),'A',0.5,'B',0.5]);
+                    it_change = np.array(['SLSRSLS','BRARB','ALBLA']);
+                    LR_turn = np.array([(1/3)*math.pi,-(2/3)*math.pi,(1/3)*math.pi,-(1/3)*math.pi,(1/3)*math.pi,-(1/3)*math.pi]);
+                    names = np.array(['Koch','Sierpinski']);
+                    
+                    (a,b,c,d,e,f) = addCode(codes,it_change,names)
+                    
+                    codes = np.insert(codes,np.size(codes),(a,c));
+                    it_change = np.insert(it_change,np.size(it_change),b);
+                    LR_turn = np.insert(LR_turn,np.size(LR_turn),(d,e));
+                    names = np.insert(names,np.size(names),f);
+                
+                System = names[2];
+                
+                print();
+                print("You chose the custom curve '{:s}'. Returning to main menu.".format(names[2]));
                 break;
                 
                 
@@ -91,8 +118,6 @@ while True:
                 
                 break;
     
-            if (np.size(names) >= 3):
-                if system_choice == np.size(np.insert(names,np.size(names),('Custom','Go back'))) - 2:
     
     ####    Info on systems   ####
     if (choice == 2):
