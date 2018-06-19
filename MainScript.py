@@ -119,18 +119,17 @@ while True:
                 break;
     
     
-    ####    Info on systems   ####
-    if (choice == 2):
-        
         print();
         
         while True:
         
-            Iter_choice = userInputMenu(np.array(['1', '2', '3', '4', '5', '6', '7', '8']),'Please input the number of iterations');
+            Iter_choice = userInputMenu(np.array(['1', '2', '3', '4', '5', '6', '7', '8']),'Please choose a number between 1 and 8');
             
             N = int(Iter_choice)
         
             break;
+        
+        
         
     ####    Plots   ####
     if (choice == 3):
@@ -152,24 +151,40 @@ while True:
              ##  Lindenmeyer system info
             if system_choice == 1:
                 
-                print('A Lindenmeyer System is a system originally created to describe the behaviour of plant cells and to model the growth processes of plant development. A Lindemeyer system is created of a string of letters which will be converted to');
-                
+                print();
+                print('A Lindenmeyer System is a system originally created to describe the behaviour of plant cells and to model the growth processes of plant development. A Lindemeyer system is created of a string of letters which will follow replacement rules and develop for each iteration. The visualisation of the developed string follows certain rules, each letter is translated into a a so-called turtle graphics. Beginning in Origo with the basic vector (1,0) L can be translated to a left turn with a given angle and R is a right turn with another angle. After each iteration the lenght of the line segment is scaled by a certain factor given by the system.  Then the system completes the string by translating each letter into a complete turtle graphic.');
+                print();
+                print();
             
             
             ##  Koch Curve info
             if system_choice == 2:
                 
-                print('The Koch Curve ');
+                print();
+                print('The Koch Curve is generated with three letters: S, L and R. The initial string is S and the replacement rules states that: \n S -> SLSRSLS \n L -> L \n R -> R \nWhich means the initial string is S and the first iteration becomes SLSRSLS and the second iteration becomes SLSRSLSLSLSRSLSRSLSRSLSLSLSRSLS. \nThe visualization rules states: \n L is translated to a left turn with 1/3*pi \n R is translated to a right turn with -2/3*pi and the scaling factor is 1/3');
+                print();
+                print();
                 
                 
-                
-            ## Sierpinski Curve inof 
+            ## Sierpinski Curve info 
             if system_choice == 3:
                 
                 print();
-                
+                print('The Sierpinski triangle is generated with the four letters: A, B, L and R. The initial string is A and the replacement rules states that: \n A -> BRARB \n B -> ALBLA \n L -> L \n R -> R \nSince the initial string is A, the first iteration becomes BRARB and the second iteration will then become ALBLARBRARBRALBLA. \nThe visualization rules states: \n L is translated to a left turn with 1/3*pi \n R is translated to a right turn with 12/3*pi and the scaling factor is 1/2');
+                print();
+                print();
                
                 
+                
+            ## Customized Curve info 
+            #if system_choice == 3:
+                
+            #    print();
+            #    print('The');
+            #    print();
+            #    print();
+                
+            
             ## Go back   
             if system_choice == 4:
                 print();
